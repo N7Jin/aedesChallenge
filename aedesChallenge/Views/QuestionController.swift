@@ -91,8 +91,7 @@ class QuestionController: UIViewController{
     }
     func returnToMainMenu() {
         navigationController?.popToRootViewController(animated: true)
-        //controllo lo score attuale vs il vecchio score
-        let defaults = UserDefaults.standard
+        let defaults = UserDefaults.standard // mi salvo il currentScore
         defaults.set(score, forKey:"currentScore")
         
     }

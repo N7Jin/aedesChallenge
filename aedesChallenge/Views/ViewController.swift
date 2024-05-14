@@ -26,11 +26,12 @@ class ViewController: UIViewController {
     }
     func updateScore(){
         let defaults = UserDefaults.standard
+        defaults.set(highScore, forKey: "highScore")
         let savedScore = defaults.integer(forKey: "currentScore")
-        if savedScore > highScore {
-            defaults.set(highScore, forKey: "highScore")
+        if savedScore > highScore { // lo score
+            defaults.set(savedScore, forKey: "highScore")
         }
-        scoreLabel.text = "High score: " + "\(highScore)"
+        scoreLabel.text = "High score: " + "\(savedScore)"
         
         
     }
